@@ -1,0 +1,7 @@
+{
+  "item.underabyss.basic_filter": "Basic Air Filter",
+  "item.underabyss.advanced_filter": "Advanced Air Filter",
+  "tooltip.underabyss.basic_filter.description": "It would be more useful inside an helmet...",
+  "tooltip.underabyss.helmet_filter.description": "Filter: Basic",
+  "tooltip.underabyss.advancedfilter.description" : "Better than basic filter"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": "minecraft:paper",
+    "B": "minecraft:charcoal"
+  },
+  "result": {
+    "count": 1,
+    "id": "underabyss:basic_filter"
+  }
+}
