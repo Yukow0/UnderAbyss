@@ -47,11 +47,11 @@ public class FilterHelmet extends CustomRecipe {
 
             totalItems++;
 
-            // 1. Détection du filtre
+
             if (stack.is(AirFilters.AIR_FILTERS)) {
                 foundFilter = true;
             }
-            // 2. Détection du casque (Tag + Défense >= 2)
+
             else if (stack.is(ItemTags.HEAD_ARMOR) && getArmorDefense(stack) >= 2) {
                 helmet = stack;
             }
@@ -60,7 +60,7 @@ public class FilterHelmet extends CustomRecipe {
             return false;
         }
 
-        // On ne valide que s'il y a exactement 2 items : 1 casque valide et 1 filtre
+
         return !helmet.isEmpty() && foundFilter && totalItems == 2;
     }
 
@@ -69,7 +69,7 @@ public class FilterHelmet extends CustomRecipe {
         ItemStack helmet = EMPTY;
         ItemStack filter = EMPTY;
 
-        // On retrouve le casque dans la grille
+
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
             if (!stack.isEmpty() && stack.is(ItemTags.HEAD_ARMOR)) {
@@ -83,11 +83,11 @@ public class FilterHelmet extends CustomRecipe {
 
         if (helmet.isEmpty() || filter.isEmpty()) return EMPTY;
 
-        // Création du résultat : Copie du casque + Application du composant
+
         ItemStack result = helmet.copy();
         result.setCount(1);
 
-        // On injecte ton Record (Type Basique, 1000 de durabilité)
+
         Map<Item, FILTER_TYPE> map = Map.of(BasicFilter.BASIC_FILTER.get(), FILTER_TYPE.BASIC, AdvancedFilter.ADVANCED_FILTER.get(), FILTER_TYPE.ADVANCED);
         FILTER_TYPE type = map.getOrDefault(filter.getItem(), FILTER_TYPE.BASIC);
         switch (type){
@@ -106,16 +106,14 @@ public class FilterHelmet extends CustomRecipe {
         return result;
     }
 
-    /**
-     * Méthode utilitaire pour calculer la défense totale d'un item proprement
-     */
+
     private double getArmorDefense(ItemStack stack) {
         double defense = 0;
-        // On récupère les modificateurs d'attributs (ou une liste vide s'il n'y en a pas)
+
         ItemAttributeModifiers modifiers = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.EMPTY);
 
         for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-            // Si c'est de l'armure et que c'est pour la tête
+
             if (entry.attribute().is(Attributes.ARMOR) && entry.slot().equals(EquipmentSlotGroup.HEAD)) {
                 defense += entry.modifier().amount();
             }

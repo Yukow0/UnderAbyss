@@ -1,6 +1,7 @@
 package ch.yukow0.underabyss;
 
 import ch.yukow0.underabyss.Component.HasFilter;
+import ch.yukow0.underabyss.Items.Filter.AdvancedFilter;
 import ch.yukow0.underabyss.Items.Filter.BasicFilter;
 import ch.yukow0.underabyss.Serializer.FilterSerializer;
 import com.mojang.logging.LogUtils;
@@ -30,6 +31,7 @@ public class Underabyss {
         // Note that this is necessary if and only if we want *this* class (Underabyss) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         BasicFilter.ITEMS.register(modEventBus);
+        AdvancedFilter.ITEMS.register(modEventBus);
         HasFilter.COMPONENTS.register(modEventBus);
 
         modEventBus.addListener(BasicFilter::AddInCreative);

@@ -12,7 +12,7 @@ public enum FILTER_TYPE implements StringRepresentable {
     VOID("void");
 
     private final String name;
-    // Le Codec permet à Minecraft de lire/écrire l'Enum dans le JSON et le NBT
+
     FILTER_TYPE(String name) { this.name = name; }
     public static final Codec<FILTER_TYPE> codec = StringRepresentable.fromEnum(FILTER_TYPE::values);
 
