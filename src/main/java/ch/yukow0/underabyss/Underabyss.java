@@ -3,6 +3,7 @@ package ch.yukow0.underabyss;
 import ch.yukow0.underabyss.Component.HasFilter;
 import ch.yukow0.underabyss.Items.Filter.AdvancedFilter;
 import ch.yukow0.underabyss.Items.Filter.BasicFilter;
+import ch.yukow0.underabyss.Items.Filter.HeatResistantFilter;
 import ch.yukow0.underabyss.Serializer.FilterSerializer;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
@@ -33,8 +34,12 @@ public class Underabyss {
         BasicFilter.ITEMS.register(modEventBus);
         AdvancedFilter.ITEMS.register(modEventBus);
         HasFilter.COMPONENTS.register(modEventBus);
+        HeatResistantFilter.ITEMS.register(modEventBus);
+
+        modEventBus.addListener(HeatResistantFilter::AddInCreative);
 
         modEventBus.addListener(BasicFilter::AddInCreative);
+        modEventBus.addListener(AdvancedFilter::AddInCreative);
         FilterSerializer.SERIALIZERS.register(modEventBus);
 
     }

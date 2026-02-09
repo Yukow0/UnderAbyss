@@ -3,5 +3,10 @@
   "item.underabyss.advanced_filter": "Advanced Air Filter",
   "tooltip.underabyss.basic_filter.description": "It would be more useful inside an helmet...",
   "tooltip.underabyss.helmet_filter.description": "Filter: Basic",
-  "tooltip.underabyss.advancedfilter.description" : "Better than basic filter"
+  "tooltip.underabyss.advancedfilter.description" : "Better than basic filter",
+  "tooltip.underabyss.advancedfilter.advanced_description" : "Filter: Advanced",
+  "tooltip.underabyss.durability" : "Durability: %d",
+  "item.underabyss.heatresistant_filter": "Heat Resistant Air Filter",
+  "tooltip.underabyss.heatresistant_filter_helmet.description": "Filter: Heat Resistant",
+  "tooltip.underabyss.heatresisant_filter.description": "It resists hot air I think...."
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": "minecraft:obsidian",
+    "B": "underabyss:advanced_filter",
+    "C": "minecraft:diamond"
+  },
+  "result": {
+    "count": 1,
+    "id": "underabyss:heatresistant_filter"
+  }
+}
